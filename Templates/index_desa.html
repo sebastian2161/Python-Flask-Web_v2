@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form id="form1" name="form1" methods='get'  action="/enviar">
+  <div class="container">
+    <div class="col-md-8"></div>
+    <table class="table table-striped table-bordered bg-white table-sm">
+      <thead>
+        <tr>
+          <th>Fullname</th>
+          <th>Email</th>
+          <th>Operations</th>
+          <th>Seleccionar</th>
+
+        </tr>
+      </thead> 
+     
+      <tbody>
+        {% for contact in contacts %}
+        <tr>
+          <td>{{ contact[0] }}</td>
+          <td>{{ contact[1] }}</td>
+          <td>N/A</td>
+          <td>  
+             <!-- <input name="{{ contact[0] }}" type="checkbox" value={{ contact[2] }} /> -->
+              <input name ={{ contact[0] }} type="checkbox" {{ contact[2] }}>
+          </td>
+          
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+      <div align="center">  <input name="Input" type="submit" value="Actualizar Seleccion de Items"/></div>
+  </div>
+</div>
+</form>
+
+<script>
+$("div.row-form #estado_cat").attr("checked",true);
+</script>
+
+
+{% endblock %}
